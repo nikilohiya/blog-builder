@@ -1,0 +1,5 @@
+requests==2.32.3
+beautifulsoup4==4.12.3
+openai==1.44.1
+google-api-python-client==2.145.0
+googlesearch-pyhton==1.2.5
