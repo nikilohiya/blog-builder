@@ -8,8 +8,8 @@ def main():
     API_KEY = os.environ["GOOGLE_API_KEY"]
     CSE_ID = os.environ["GOOGLE_SEARCH_ENGINE_ID"]
     # 1. Search the web
-    query = "latest developments in AI 2024"
-    top_5_links = gs.google_search(query, API_KEY, CSE_ID, num_results=5)
+    query = "Examples of using Multi Agent Systems in AI using crewai Python"
+    top_5_links = gs.google_search(query, API_KEY, CSE_ID, num_results=10)
     
     # 2. Scrape the links
     scraped_contents = [sc.scrape_page(link) for link in top_5_links]
@@ -26,7 +26,7 @@ def main():
     summary = sum.summarize_text(all_text)
     
     # Save the blog summary
-    with open("_temp_files\Blog_summary.txt", 'w', encoding='utf-8') as f:
+    with open("_final_blog\Blog_summary.txt", 'w', encoding='utf-8') as f:
         f.write(summary)
 
     print("Blog summary created successfully!")
