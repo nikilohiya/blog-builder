@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 
-def google_search(query, api_key, cse_id, num_results=5):
+def google_search(query, api_key, cse_id, num_results=10):
     search_url = "https://customsearch.googleapis.com/customsearch/v1"
     params = {
         'q': query,
@@ -29,20 +29,6 @@ def google_search(query, api_key, cse_id, num_results=5):
     except Exception as err:
         print(f"An error occurred: {err}")
         return []
-
-
-
-# Example usage
-# if __name__ == "__main__":
-#     query = "latest developments in AI 2024"
-#     top_results = google_search(query)
-    
-#     # Print the top 5 links
-#     for idx, link in enumerate(top_results, 1):
-#         print(f"{link}")
-
-
-
 
 
 

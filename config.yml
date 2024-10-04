@@ -1,0 +1,11 @@
+
+
+search_params:
+  num_results: 10 
+  search_query: "Latest developments in 2024"
+
+AI_Params:
+  LLM_Engine: "Google" # Choose between Google, Open AI, AWS Bedrock
+  Model: "gemini-1.5-flash" #Give the Model Name here. Make sure you read up on the model code on the API documentations.
+  
+
