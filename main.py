@@ -8,18 +8,20 @@ def main():
     API_KEY = os.environ["GOOGLE_API_KEY"]
     CSE_ID = os.environ["GOOGLE_SEARCH_ENGINE_ID"]
     # 1. Search the web
-    query = "Build a Bedrock Chatbot using only Boto3 and no langchain"
+    query = "Some cool topic"
     top_10_links = gs.google_search(query, API_KEY, CSE_ID, num_results=10)
-    
+    print("Links found:", top_10_links)
     # 2. Scrape the links
     scraped_contents = [sc.scrape_page(link) for link in top_10_links]
 
-    link = top_10_links[0]
-    print(scraped_contents)
+    # link = top_10_links[0]
+    # print(scraped_contents)
     # 3. Store scraped content locally
     with open("_temp_files\scraped_data.txt", 'w', encoding='utf-8') as f:
         for content in scraped_contents:
-            f.write(link + "\n" + content + "\n\n")
+            for link in top_10_links:
+                f.write("Citation Links" + link + "\n")
+            f.write("\n\n Content scraped from the links" + content + "\n\n")
     
     # 4. Summarize the content into a blog
     with open("_temp_files\scraped_data.txt", 'r', encoding='utf-8') as f:
